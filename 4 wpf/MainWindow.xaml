@@ -1,0 +1,44 @@
+﻿<Window x:Class="Task4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"  
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <TabItem Name="MainTab"  Header="Main" Width="100">
+
+                <Grid Background="#FFE5E5E5" Margin="5">
+                    <ScrollViewer>
+                        <TextBlock x:Name="MainText" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Justify" TextWrapping="Wrap" Padding="10"><Run Text="Hello"/><LineBreak/><Run Text="123456              676767!!!"/><LineBreak/><Run/></TextBlock>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings" Width="100">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="52*"/>
+                        <ColumnDefinition Width="205*"/>
+                        <ColumnDefinition Width="256*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Name="BackColor" Content="Цвет фона" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5,5,4.8,5.2" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <Label Name="TextColor" Content="Цвет текста" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5,4.8,4.8,4.6" Grid.Row="1" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <Label Name="FontSize" Content="Размер шрифта" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5,5.4,4.8,5" Grid.Row="2" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <Label Name="FontStyle" Content="Стиль шрифта" FontSize="16" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5,5,4.8,5.4" Grid.Row="3" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <Button Content="Сохранить" HorizontalAlignment="Center"  Grid.Row="4" VerticalAlignment="Center" Width="100" Height="30" Grid.ColumnSpan="2" FontSize="16" Click="Button_Click" Grid.Column="1" Margin="154.2,14.6,206.8,13.8"/>
+                    <xctk:ColorPicker Name="ClrBack" Margin="5.2,5,4.8,5.2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" SelectedColorChanged="ClrBack_SelectedColorChanged"/>
+                    <xctk:ColorPicker Name="ClrText" Margin="5.2,4.8,4.8,4.6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="2" Grid.Row="1" SelectedColorChanged="ClrText_SelectedColorChanged"/>
+                    <ComboBox Name="TextSize" FontSize="16" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5.2,5.4,4.8,5" Grid.Row="2" VerticalAlignment="Stretch" SelectionChanged="TextSize_SelectionChanged"/>
+                    <ComboBox Name="TextFont" FontSize="16" Grid.Column="2" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="5.2,5,4.8,5.4" Grid.Row="3" VerticalAlignment="Stretch" SelectionChanged="TextFont_SelectionChanged"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
